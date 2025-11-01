@@ -6,15 +6,12 @@ export default function ProductCardExample() {
     <div className="p-8 max-w-md">
       <ProductCard
         name="İspir Kuru Fasulyesi"
+        tagline="İnce kabuklu, baldan tatlı"
         image={beansImage}
-        features={[
-          "İnce kabuklu, erken pişen",
-          "Doğal üretim yöntemleri",
-          "El emeği ile ayıklama",
-          "Eşsiz tat ve kalite"
-        ]}
+        origin="Erzurum, İspir"
         certified={false}
         href="#"
+        onContactClick={() => console.log('Contact clicked')}
       />
     </div>
   )
