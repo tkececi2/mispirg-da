@@ -1,8 +1,8 @@
 import Navigation from "@/components/Navigation";
-import Hero from "@/components/Hero";
 import Footer from "@/components/Footer";
 import Timeline from "@/components/Timeline";
 import GIBadge from "@/components/GIBadge";
+import AnimatedSection from "@/components/AnimatedSection";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -13,11 +13,11 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Check, MapPin, Award, Leaf, Calendar, Mountain } from "lucide-react";
+import { motion } from "framer-motion";
 import beansImage from '@assets/generated_images/İspir_beans_product_photo_2cbc159a.png';
 import molassesImage from '@assets/generated_images/Mulberry_molasses_product_photo_6290a604.png';
 import heritageImage from '@assets/generated_images/Traditional_bean_sorting_heritage_33e2b464.png';
 import productionImage from '@assets/generated_images/Traditional_pekmez_production_3a98a91e.png';
-import mapImage from '@assets/generated_images/Erzurum_region_map_69981ae8.png';
 import { useLocation } from "wouter";
 
 export default function ProductsPage() {
@@ -27,6 +27,7 @@ export default function ProductsPage() {
     const message = `Merhaba, ${product} için toptan fiyat teklifi almak istiyorum.`;
     window.open(`https://wa.me/905318984145?text=${encodeURIComponent(message)}`, '_blank');
   };
+
   const beansTimeline = [
     { number: 1, title: "Tarla Hazırlığı", description: "Ekim ayında bir sonraki sezon için tarla hazırlanır" },
     { number: 2, title: "Gübreleme ve Ekim", description: "Nisan-Mayıs aylarında doğal keçi gübresi ile gübrelenir ve ekim yapılır" },
@@ -59,365 +60,263 @@ export default function ProductsPage() {
     <div className="min-h-screen">
       <Navigation />
       
-      <div className="pt-16">
-        <section id="fasulye" className="scroll-mt-16">
-          {/* Premium Product Hero with Stats */}
-          <div className="relative h-[70vh] flex items-center overflow-hidden">
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${beansImage})` }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
+      {/* Hero Section */}
+      <section className="pt-16 pb-12 md:pb-20 px-4 bg-gradient-to-b from-[#EFE9E1]/50 to-background">
+        <div className="max-w-7xl mx-auto">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <Badge className="bg-primary text-primary-foreground mb-4 px-6 py-2">
+              Premium Koleksiyon
+            </Badge>
+            <h1 className="font-serif text-5xl md:text-6xl font-bold text-foreground mb-6">
+              Ürünlerimiz
+            </h1>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Coğrafi işaret tescilli, geleneksel yöntemlerle üretilen eşsiz lezzetler
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Side by Side Products */}
+      <section className="py-12 md:py-20 px-4">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-              <div className="max-w-3xl">
-                <Badge className="bg-[#C9A227] text-white mb-4 px-4 py-2">
-                  Premium Kalite
-                </Badge>
-                <h1 className="font-serif text-5xl md:text-6xl font-bold text-white mb-6">
-                  İspir Kuru Fasulyesi
-                </h1>
-                <p className="text-2xl text-white/90 mb-8">
-                  İnce kabuklu, erken pişen, eşine az rastlanır tat
-                </p>
-                <Button 
-                  size="lg"
-                  onClick={() => openWhatsApp('İspir Kuru Fasulyesi')}
-                  data-testid="button-contact-beans"
-                >
-                  Toptan Teklif Al
-                </Button>
-              </div>
-            </div>
-          </div>
+            {/* İSPİR KURU FASULYESİ */}
+            <AnimatedSection>
+              <div className="h-full flex flex-col" id="fasulye">
+                {/* Product Header */}
+                <Card className="mb-6 overflow-hidden hover-elevate border-2 border-primary/20">
+                  <div className="relative h-64">
+                    <img
+                      src={beansImage}
+                      alt="İspir Kuru Fasulyesi"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-[#5A2D82] text-white px-3 py-1">
+                        <Award className="h-3 w-3 mr-1 inline" />
+                        Coğrafi İşaret #523
+                      </Badge>
+                    </div>
+                  </div>
+                  <CardContent className="p-6">
+                    <h2 className="font-serif text-3xl font-bold text-foreground mb-3">
+                      İspir Kuru Fasulyesi
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-4">
+                      İnce kabuklu, erken pişen, eşine az rastlanır tat
+                    </p>
+                    
+                    {/* Quick Stats */}
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      <div className="flex items-center gap-2 text-sm">
+                        <MapPin className="h-4 w-4 text-primary" />
+                        <span className="text-muted-foreground">İspir, Erzurum</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <Mountain className="h-4 w-4 text-primary" />
+                        <span className="text-muted-foreground">1500-2000m</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <Calendar className="h-4 w-4 text-primary" />
+                        <span className="text-muted-foreground">Eylül Hasadı</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <Leaf className="h-4 w-4 text-primary" />
+                        <span className="text-muted-foreground">100% Doğal</span>
+                      </div>
+                    </div>
 
-          {/* Executive Summary Cards */}
-          <div className="bg-[#EFE9E1]/30 py-12 px-4">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <Card className="hover-elevate">
-                  <CardContent className="p-6 text-center">
-                    <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <div className="text-2xl font-bold font-serif text-foreground mb-1">
-                      İspir, Erzurum
-                    </div>
-                    <div className="text-sm text-muted-foreground">Köken Bölgesi</div>
+                    <Button 
+                      className="w-full" 
+                      size="lg"
+                      onClick={() => openWhatsApp('İspir Kuru Fasulyesi')}
+                      data-testid="button-contact-beans"
+                    >
+                      Toptan Teklif Al
+                    </Button>
                   </CardContent>
                 </Card>
-                
-                <Card className="hover-elevate">
-                  <CardContent className="p-6 text-center">
-                    <Mountain className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <div className="text-2xl font-bold font-serif text-foreground mb-1">
-                      1500-2000m
-                    </div>
-                    <div className="text-sm text-muted-foreground">Yükseklik</div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="hover-elevate">
-                  <CardContent className="p-6 text-center">
-                    <Calendar className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <div className="text-2xl font-bold font-serif text-foreground mb-1">
-                      Eylül
-                    </div>
-                    <div className="text-sm text-muted-foreground">Hasat Dönemi</div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="hover-elevate">
-                  <CardContent className="p-6 text-center">
-                    <Leaf className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <div className="text-2xl font-bold font-serif text-foreground mb-1">
-                      100% Doğal
-                    </div>
-                    <div className="text-sm text-muted-foreground">El Emeği</div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
 
-          <div className="py-16 md:py-24 px-4">
-            <div className="max-w-6xl mx-auto">
-              {/* Product Showcase */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                <div className="rounded-lg overflow-hidden">
-                  <img
-                    src={beansImage}
-                    alt="İspir Kuru Fasulyesi"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="rounded-lg overflow-hidden">
+                {/* Product Details */}
+                <Card className="mb-6 flex-1">
+                  <CardContent className="p-6">
+                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                      Arka Hikâye
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      İspir ilçesi, Erzurum'un bereketli vadilerinde yer alır. Bölgenin mikroklima özelliği ve yüksek rakımı (1500-2000m), fasulyeye eşsiz bir tat kazandırır.
+                    </p>
+                    <p className="text-muted-foreground">
+                      İspir fasulyesi, ince kabuklu yapısı ve erken pişme özelliği ile öne çıkar. Kimyasal gübre kullanılmadan, doğal yöntemlerle üretilir ve elle özenle ayıklanır.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Production Timeline */}
+                <Card className="mb-6">
+                  <CardContent className="p-6">
+                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                      Üretim Süreci
+                    </h3>
+                    <Timeline steps={beansTimeline} />
+                  </CardContent>
+                </Card>
+
+                {/* Image */}
+                <div className="rounded-lg overflow-hidden mb-6">
                   <img
                     src={heritageImage}
-                    alt="Geleneksel Üretim"
-                    className="w-full h-full object-cover"
+                    alt="Geleneksel Fasulye Ayıklama"
+                    className="w-full h-64 object-cover"
                   />
                 </div>
-              </div>
-              <div className="mb-12">
-                <h2 className="font-serif text-3xl font-bold text-foreground mb-6" data-testid="text-beans-story-title">
-                  Arka Hikâye
-                </h2>
-                <div className="prose prose-lg max-w-none text-muted-foreground">
-                  <p>
-                    İspir bulunduğu coğrafik yapı itibariyle kültürel özellikler yanında tarımsal ürünler için de gen merkezi ve geçiş süreci içinde kalmıştır. İpek yolu ticareti ve Asya'dan Avrupa göç sırasında göç eden insanlar beraberinde pek çok tohum ve fidanı da yanında götürerek göç ettiği yerlere nakil etmişlerdir.
-                  </p>
-                  <p>
-                    Erzurum'un İspir ilçesinde yetişen ve eşine az rastlanır tadı olan İspir Kuru Fasulyesi, arazinin dağlık olması ve makineli tarımın yaygın olmaması nedeniyle doğal üretim yöntemleri ile el emeğiyle toplanıyor ve ayıklanıyor.
-                  </p>
-                </div>
-              </div>
 
-              <Card className="mb-12">
-                <CardContent className="p-8">
-                  <h3 className="font-serif text-2xl font-semibold text-foreground mb-4">Öne Çıkan Özellikler</h3>
-                  <ul className="space-y-3">
-                    {[
-                      "Suda yeterince şişmesi",
-                      "Erken pişmesi",
-                      "Pişince kabuk atmaması",
-                      "İnce kabuklu yapısı",
-                      "El emeği ile ayıklama",
-                      "Doğal üretim yöntemleri"
-                    ].map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-primary mt-0.5 flex-shrink-0" />
-                        <span className="text-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <div className="mb-12">
-                <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">Üretim Süreci</h3>
-                <Timeline steps={beansTimeline} />
-              </div>
-
-              <div>
-                <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">Sıkça Sorulan Sorular</h3>
-                <Accordion type="single" collapsible>
-                  {beansFaq.map((faq, idx) => (
-                    <AccordionItem key={idx} value={`item-${idx}`}>
-                      <AccordionTrigger className="font-serif">{faq.q}</AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="pekmez" className="scroll-mt-16">
-          {/* Premium Product Hero with Stats */}
-          <div className="relative h-[70vh] flex items-center overflow-hidden">
-            <div
-              className="absolute inset-0 bg-cover bg-center"
-              style={{ backgroundImage: `url(${molassesImage})` }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/60 to-black/40" />
-            
-            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-              <div className="max-w-3xl">
-                <div className="flex items-center gap-3 mb-4">
-                  <Badge className="bg-[#5A2D82] text-white px-4 py-2">
-                    <Award className="h-4 w-4 mr-2 inline" />
-                    Coğrafi İşaret Tescilli
-                  </Badge>
-                  <Badge className="bg-[#C9A227] text-white px-4 py-2">
-                    Tescil No: 112
-                  </Badge>
-                </div>
-                <h1 className="font-serif text-5xl md:text-6xl font-bold text-white mb-6">
-                  Karnavas Dut Pekmezi
-                </h1>
-                <p className="text-2xl text-white/90 mb-8">
-                  100% doğal içerik, baldan tatlı eşsiz lezzet
-                </p>
-                <div className="flex gap-4">
-                  <Button 
-                    size="lg"
-                    onClick={() => openWhatsApp('Karnavas Dut Pekmezi')}
-                    data-testid="button-contact-molasses"
-                  >
-                    Toptan Teklif Al
-                  </Button>
-                  <Button 
-                    size="lg"
-                    variant="outline"
-                    className="bg-background/20 backdrop-blur-md border-white/30 text-white hover:bg-background/30"
-                    onClick={() => setLocation('/cografi-isaret')}
-                  >
-                    Coğrafi İşaret Belgesi
-                  </Button>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Executive Summary Cards */}
-          <div className="bg-[#EFE9E1]/30 py-12 px-4">
-            <div className="max-w-7xl mx-auto">
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <Card className="hover-elevate border-2 border-[#5A2D82]/20">
-                  <CardContent className="p-6 text-center">
-                    <Award className="h-8 w-8 text-[#5A2D82] mx-auto mb-3" />
-                    <div className="text-2xl font-bold font-serif text-foreground mb-1">
-                      Tescil #112
-                    </div>
-                    <div className="text-sm text-muted-foreground">Coğrafi İşaret</div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="hover-elevate">
-                  <CardContent className="p-6 text-center">
-                    <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <div className="text-2xl font-bold font-serif text-foreground mb-1">
-                      Karnavas, Olur
-                    </div>
-                    <div className="text-sm text-muted-foreground">Köken Köyü</div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="hover-elevate">
-                  <CardContent className="p-6 text-center">
-                    <Calendar className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <div className="text-2xl font-bold font-serif text-foreground mb-1">
-                      8-10 Kez
-                    </div>
-                    <div className="text-sm text-muted-foreground">Hasat Sayısı</div>
-                  </CardContent>
-                </Card>
-                
-                <Card className="hover-elevate">
-                  <CardContent className="p-6 text-center">
-                    <Leaf className="h-8 w-8 text-primary mx-auto mb-3" />
-                    <div className="text-2xl font-bold font-serif text-foreground mb-1">
-                      Dut + Su
-                    </div>
-                    <div className="text-sm text-muted-foreground">İçerik</div>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-
-          <div className="py-16 md:py-24 px-4">
-            <div className="max-w-6xl mx-auto">
-              {/* GI Certification Spotlight */}
-              <div className="bg-gradient-to-br from-[#5A2D82]/10 to-[#C9A227]/10 rounded-lg p-12 mb-16">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                  <div>
-                    <div className="flex justify-center mb-8">
-                      <GIBadge size="lg" />
-                    </div>
-                    <h3 className="font-serif text-3xl font-bold text-center mb-6">
-                      Coğrafi İşaret Tescilli
+                {/* FAQ */}
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                      Sıkça Sorulan Sorular
                     </h3>
-                    <div className="space-y-4 text-center">
-                      <div>
-                        <div className="font-semibold text-foreground">Tescil Tarihi</div>
-                        <div className="text-muted-foreground">12 Ağustos 2005</div>
-                      </div>
-                      <div>
-                        <div className="font-semibold text-foreground">Tescil No</div>
-                        <div className="text-muted-foreground">112</div>
-                      </div>
-                      <div>
-                        <div className="font-semibold text-foreground">Tescil Kuruluşu</div>
-                        <div className="text-muted-foreground">T.C. Türk Patent Enstitüsü</div>
-                      </div>
+                    <Accordion type="single" collapsible className="w-full">
+                      {beansFaq.map((faq, idx) => (
+                        <AccordionItem key={idx} value={`beans-${idx}`}>
+                          <AccordionTrigger className="text-left">
+                            {faq.q}
+                          </AccordionTrigger>
+                          <AccordionContent className="text-muted-foreground">
+                            {faq.a}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </CardContent>
+                </Card>
+              </div>
+            </AnimatedSection>
+
+            {/* KARNAVAS DUT PEKMEZİ */}
+            <AnimatedSection delay={0.1}>
+              <div className="h-full flex flex-col" id="pekmez">
+                {/* Product Header */}
+                <Card className="mb-6 overflow-hidden hover-elevate border-2 border-[#5A2D82]/20">
+                  <div className="relative h-64">
+                    <img
+                      src={molassesImage}
+                      alt="Karnavas Dut Pekmezi"
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute top-4 right-4">
+                      <Badge className="bg-[#5A2D82] text-white px-3 py-1">
+                        <Award className="h-3 w-3 mr-1 inline" />
+                        Coğrafi İşaret #112
+                      </Badge>
                     </div>
                   </div>
-                  <div className="rounded-lg overflow-hidden">
-                    <img
-                      src={mapImage}
-                      alt="Erzurum Bölgesi"
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </div>
-              </div>
+                  <CardContent className="p-6">
+                    <h2 className="font-serif text-3xl font-bold text-foreground mb-3">
+                      Karnavas Dut Pekmezi
+                    </h2>
+                    <p className="text-lg text-muted-foreground mb-4">
+                      100% doğal içerik, baldan tatlı eşsiz lezzet
+                    </p>
+                    
+                    {/* Quick Stats */}
+                    <div className="grid grid-cols-2 gap-3 mb-4">
+                      <div className="flex items-center gap-2 text-sm">
+                        <MapPin className="h-4 w-4 text-primary" />
+                        <span className="text-muted-foreground">Karnavas, Olur</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <Award className="h-4 w-4 text-[#5A2D82]" />
+                        <span className="text-muted-foreground">Tescil #112</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <Calendar className="h-4 w-4 text-primary" />
+                        <span className="text-muted-foreground">8-10 Kez Hasat</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-sm">
+                        <Leaf className="h-4 w-4 text-primary" />
+                        <span className="text-muted-foreground">Dut + Su</span>
+                      </div>
+                    </div>
 
-              {/* Product Showcase */}
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-                <div className="rounded-lg overflow-hidden">
-                  <img
-                    src={molassesImage}
-                    alt="Karnavas Dut Pekmezi"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="rounded-lg overflow-hidden">
+                    <Button 
+                      className="w-full" 
+                      size="lg"
+                      onClick={() => openWhatsApp('Karnavas Dut Pekmezi')}
+                      data-testid="button-contact-molasses"
+                    >
+                      Toptan Teklif Al
+                    </Button>
+                  </CardContent>
+                </Card>
+
+                {/* Product Details */}
+                <Card className="mb-6 flex-1">
+                  <CardContent className="p-6">
+                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                      Doğanın Saf Tadı
+                    </h3>
+                    <p className="text-muted-foreground mb-4">
+                      Karnavas Dut Pekmezi, Erzurum'un Olur ilçesine bağlı Karnavas köyünde, asırlardır süregelen geleneksel yöntemlerle üretilir. 12 Ağustos 2005 tarihinde Coğrafi İşaret Tescili almıştır (No: 112).
+                    </p>
+                    <p className="text-muted-foreground">
+                      Sadece dut ve su kullanılarak, hiçbir kimyasal katkı maddesi eklenmeden üretilir. Çam odunu ateşinde kaynatılır ve tahta preslerle sıkılarak özel tadına kavuşur.
+                    </p>
+                  </CardContent>
+                </Card>
+
+                {/* Production Timeline */}
+                <Card className="mb-6">
+                  <CardContent className="p-6">
+                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                      Üretim Süreci
+                    </h3>
+                    <Timeline steps={molassesTimeline} />
+                  </CardContent>
+                </Card>
+
+                {/* Image */}
+                <div className="rounded-lg overflow-hidden mb-6">
                   <img
                     src={productionImage}
-                    alt="Geleneksel Üretim"
-                    className="w-full h-full object-cover"
+                    alt="Geleneksel Pekmez Üretimi"
+                    className="w-full h-64 object-cover"
                   />
                 </div>
-              </div>
 
-              <div className="mb-12">
-                <h2 className="font-serif text-3xl font-bold text-foreground mb-6" data-testid="text-molasses-story-title">
-                  Doğanın Saf Tadı
-                </h2>
-                <div className="prose prose-lg max-w-none text-muted-foreground">
-                  <p>
-                    Karnavas Dut Pekmezi, Erzurum'un Olur ilçesine bağlı Karnavas köyünde asırlardır süregelen geleneksel yöntemlerle üretilen, coğrafi işaret tescilli özel bir üründür.
-                  </p>
-                  <p>
-                    Ürün, sadece olgun dutlar ve su kullanılarak, hiçbir kimyasal katkı maddesi eklenmeden üretilir. 12 Ağustos 2005 tarihinde T.C. Türk Patent Enstitüsü tarafından 112 numaralı tescil ile coğrafi işaret belgesi almıştır.
-                  </p>
-                </div>
+                {/* FAQ */}
+                <Card>
+                  <CardContent className="p-6">
+                    <h3 className="font-serif text-xl font-bold text-foreground mb-4">
+                      Sıkça Sorulan Sorular
+                    </h3>
+                    <Accordion type="single" collapsible className="w-full">
+                      {molassesFaq.map((faq, idx) => (
+                        <AccordionItem key={idx} value={`molasses-${idx}`}>
+                          <AccordionTrigger className="text-left">
+                            {faq.q}
+                          </AccordionTrigger>
+                          <AccordionContent className="text-muted-foreground">
+                            {faq.a}
+                          </AccordionContent>
+                        </AccordionItem>
+                      ))}
+                    </Accordion>
+                  </CardContent>
+                </Card>
               </div>
-
-              <Card className="mb-12">
-                <CardContent className="p-8">
-                  <h3 className="font-serif text-2xl font-semibold text-foreground mb-4">Üstün Kalite Özellikleri</h3>
-                  <ul className="space-y-3">
-                    {[
-                      "100% doğal içerik (sadece dut ve su)",
-                      "Coğrafi İşaret Tescilli (No: 112)",
-                      "Geleneksel üretim yöntemi",
-                      "Çam odunu ateşinde kaynatma",
-                      "Tahta preslerle şıra elde etme",
-                      "Kimyasal gübre kullanılmadan üretim",
-                      "Kansızlığa iyi gelir",
-                      "Vücudu güçlendirir"
-                    ].map((feature, idx) => (
-                      <li key={idx} className="flex items-start gap-3">
-                        <Check className="h-5 w-5 text-[#C9A227] mt-0.5 flex-shrink-0" />
-                        <span className="text-foreground">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </CardContent>
-              </Card>
-
-              <div className="mb-12">
-                <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">Geleneksel Üretim Süreci</h3>
-                <Timeline steps={molassesTimeline} />
-              </div>
-
-              <div>
-                <h3 className="font-serif text-2xl font-semibold text-foreground mb-6">Sıkça Sorulan Sorular</h3>
-                <Accordion type="single" collapsible>
-                  {molassesFaq.map((faq, idx) => (
-                    <AccordionItem key={idx} value={`item-${idx}`}>
-                      <AccordionTrigger className="font-serif">{faq.q}</AccordionTrigger>
-                      <AccordionContent className="text-muted-foreground">{faq.a}</AccordionContent>
-                    </AccordionItem>
-                  ))}
-                </Accordion>
-              </div>
-            </div>
+            </AnimatedSection>
           </div>
-        </section>
-      </div>
+        </div>
+      </section>
 
       <Footer />
     </div>
