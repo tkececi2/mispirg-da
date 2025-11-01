@@ -9,9 +9,9 @@ import { MapPin, Shield, Award, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
 
 // Public images
-const mapImage = '/images/Erzurum_region_map_69981ae8.png';
-const beansImage = '/images/İspir_beans_product_photo_2cbc159a.png';
-const molassesImage = '/images/Mulberry_molasses_product_photo_6290a604.png';
+const mapImage = '/images/erzurum_map.png';
+const beansImage = '/images/ispir_beans.png';
+const molassesImage = '/images/mulberry_molasses.png';
 
 export default function GIPage() {
   return (

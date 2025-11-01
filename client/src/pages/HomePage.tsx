@@ -15,9 +15,9 @@ import { Leaf, Award, Heart, Sprout, Mountain, Users, ArrowRight, Star, Trending
 import { useLocation } from "wouter";
 
 // Public images
-const heroImage = '/images/İspir_landscape_hero_image_f4ebad56.png';
-const beansImage = '/images/İspir_beans_product_photo_2cbc159a.png';
-const molassesImage = '/images/Mulberry_molasses_product_photo_6290a604.png';
+const heroImage = '/images/ispir_landscape.png';
+const beansImage = '/images/ispir_beans.png';
+const molassesImage = '/images/mulberry_molasses.png';
 
 export default function HomePage() {
   const [, setLocation] = useLocation();

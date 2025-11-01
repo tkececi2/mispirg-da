@@ -8,9 +8,9 @@ import { Leaf, Heart, Award, Users, Target, CheckCircle, TreePine, Handshake } f
 import { motion } from "framer-motion";
 
 // Public images
-const heritageImage = '/images/Traditional_bean_sorting_heritage_33e2b464.png';
-const landscapeImage = '/images/İspir_landscape_hero_image_f4ebad56.png';
-const productionImage = '/images/Traditional_pekmez_production_3a98a91e.png';
+const heritageImage = '/images/traditional_heritage.png';
+const landscapeImage = '/images/ispir_landscape.png';
+const productionImage = '/images/traditional_production.png';
 
 export default function AboutPage() {
   const values = [

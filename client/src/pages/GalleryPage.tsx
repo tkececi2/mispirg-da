@@ -8,12 +8,12 @@ import { useState } from "react";
 import { X } from "lucide-react";
 
 // Public images
-const beansImage = '/images/İspir_beans_product_photo_2cbc159a.png';
-const molassesImage = '/images/Mulberry_molasses_product_photo_6290a604.png';
-const heritageImage = '/images/Traditional_bean_sorting_heritage_33e2b464.png';
-const productionImage = '/images/Traditional_pekmez_production_3a98a91e.png';
-const landscapeImage = '/images/İspir_landscape_hero_image_f4ebad56.png';
-const mapImage = '/images/Erzurum_region_map_69981ae8.png';
+const beansImage = '/images/ispir_beans.png';
+const molassesImage = '/images/mulberry_molasses.png';
+const heritageImage = '/images/traditional_heritage.png';
+const productionImage = '/images/traditional_production.png';
+const landscapeImage = '/images/ispir_landscape.png';
+const mapImage = '/images/erzurum_map.png';
 
 export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
