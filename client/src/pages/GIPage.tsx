@@ -7,9 +7,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Shield, Award, CheckCircle } from "lucide-react";
 import { motion } from "framer-motion";
-import mapImage from '@assets/generated_images/Erzurum_region_map_69981ae8.png';
-import beansImage from '@assets/generated_images/İspir_beans_product_photo_2cbc159a.png';
-import molassesImage from '@assets/generated_images/Mulberry_molasses_product_photo_6290a604.png';
+
+// Public images
+const mapImage = '/images/Erzurum_region_map_69981ae8.png';
+const beansImage = '/images/İspir_beans_product_photo_2cbc159a.png';
+const molassesImage = '/images/Mulberry_molasses_product_photo_6290a604.png';
 
 export default function GIPage() {
   return (

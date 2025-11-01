@@ -15,11 +15,13 @@ import {
 } from "@/components/ui/accordion";
 import { Check, MapPin, Award, Leaf, Calendar, Mountain } from "lucide-react";
 import { motion } from "framer-motion";
-import beansImage from '@assets/generated_images/İspir_beans_product_photo_2cbc159a.png';
-import molassesImage from '@assets/generated_images/Mulberry_molasses_product_photo_6290a604.png';
-import heritageImage from '@assets/generated_images/Traditional_bean_sorting_heritage_33e2b464.png';
-import productionImage from '@assets/generated_images/Traditional_pekmez_production_3a98a91e.png';
 import { useLocation } from "wouter";
+
+// Public images
+const beansImage = '/images/İspir_beans_product_photo_2cbc159a.png';
+const molassesImage = '/images/Mulberry_molasses_product_photo_6290a604.png';
+const heritageImage = '/images/Traditional_bean_sorting_heritage_33e2b464.png';
+const productionImage = '/images/Traditional_pekmez_production_3a98a91e.png';
 
 export default function ProductsPage() {
   const [, setLocation] = useLocation();

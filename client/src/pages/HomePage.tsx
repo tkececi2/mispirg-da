@@ -12,10 +12,12 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Leaf, Award, Heart, Sprout, Mountain, Users, ArrowRight, Star, TrendingUp, Package } from "lucide-react";
-import heroImage from '@assets/generated_images/İspir_landscape_hero_image_f4ebad56.png';
-import beansImage from '@assets/generated_images/İspir_beans_product_photo_2cbc159a.png';
-import molassesImage from '@assets/generated_images/Mulberry_molasses_product_photo_6290a604.png';
 import { useLocation } from "wouter";
+
+// Public images
+const heroImage = '/images/İspir_landscape_hero_image_f4ebad56.png';
+const beansImage = '/images/İspir_beans_product_photo_2cbc159a.png';
+const molassesImage = '/images/Mulberry_molasses_product_photo_6290a604.png';
 
 export default function HomePage() {
   const [, setLocation] = useLocation();
