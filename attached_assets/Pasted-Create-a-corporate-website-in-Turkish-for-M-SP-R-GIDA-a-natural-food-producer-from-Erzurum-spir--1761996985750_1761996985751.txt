@@ -1,0 +1,72 @@
+Create a corporate website in Turkish for MİSPİR GIDA, a natural food producer from Erzurum / İspir, Türkiye, specializing in Mekspir İspir Kuru Fasulyesi and Karnavas Dut Pekmezi (Geographical Indication No.112).
+
+The website must look premium, natural, and trustworthy, combining local heritage with modern quality.
+
+🔹 Design
+
+Modern corporate design with a natural aesthetic
+
+Color palette: Forest green (#0F5132), Earth brown (#6B4E3D), Cream (#EFE9E1), Plum purple (#5A2D82), Gold accent (#C9A227)
+
+Fonts: Fraunces for headings, Inter for body
+
+Add smooth scroll & reveal animations (Framer Motion style)
+
+🔹 Pages
+
+Ana Sayfa (Home): Hero with slogan “Doğanın Saf Lezzeti”, brand intro, product highlights, CTA “Ürünleri Keşfet” & “Toptan Teklif Alın”
+
+Kurumsal (About): MİSPİR’s story, heritage, mission, sustainable production, regional roots
+
+Ürünler (Products): Two cards →
+🫘 Mekspir İspir Kuru Fasulyesi (thin-skinned, quick-cooking, natural farming, handcrafted sorting)
+🍯 Karnavas Dut Pekmezi (100% natural mulberry & water, wood-fired boiling, coğrafi işaret tescilli)
+
+Coğrafi İşaret: Explain GI system, map of Erzurum region, step-by-step pekmez production timeline
+
+İletişim: Contact form, WhatsApp, Google Maps embed, address, phone, email
+
+KVKK: Legal / Privacy placeholder
+
+🔹 Content
+
+Use Turkish language for all sections.
+Each product page should include:
+
+Hero banner with product photo
+
+Origin story and production process
+
+Bullet-point features
+
+Nutrition or quality highlights
+
+FAQ accordion
+
+🔹 Tech & Output
+
+Use Next.js 14 + Tailwind + TypeScript + shadcn/ui + Framer Motion.
+The output should be a complete, exportable, multi-page website ready to deploy on Vercel or Netlify, fully responsive and SEO-optimized (meta tags, schema, alt texts).
+
+Tone: warm, authentic, premium — emphasize local craftsmanship and trust.
+
+İspir Kuru Fasülyesi 
+
+Arka hikâye:
+İspir bulunduğu coğrafik yapı itibariyle kültürel özellikler yanında tarımsal ürünler için de gen merkezi ve geçiş süreci içinde kalmıştır. İpek yolu ticareti ve Asyadan Avrupa göç sırasında göç eden insanlar beraberinde pek çok tohum ve fidanı da yanında götürerek göç ettiği yerlere nakil etmişlerdir. Pek çok uygarlık için geçiş bölgesi olan bu havza sahip olduğu mikroklima özelliği nedeniyle kökeni binlerce yıla dayanan pek çok bitki için gen merkezi haline gelmiştir. Bu gün Türkiyede çoruh havzası en fazla endemk bitki türünü barındıran bölge konumundadır. Bu nedenle bölgede binlerce yılı geçerek doğal seleksiyonla günümüze kadar gelmeyi başaran bu tohum günümüzde özellikleri bakımından farklılıkları yaratan bir çeşit haline gelmiştir. Dünyada organik ve endemik ürünler gibi yeni gelişen kavram içerisinde Geographic  Idendification Crop  modelinde yani bölgeye özel ürün modelinde ülke ve dünya markası haline gelmeye başlamıştır. Yani bu tohum sahip olduğu özellikleri bulunduğu coğrafyanın toprak, iklim parametreleri (sıcaklık, nem, ışık intensitesi, gece ile gündüz arası sıcaklık farkı, nispi nem), su kalitesi, girdi, toprak kalitesi ve coğrafik konumuyla doğrudan bütünleşmesi anlamına gelmektedir. Yetiştiricilik açısından kimyasal girdinin kullanılmadığı, organik tarım veya doğal tarım modelinde yetiştiriciliğin yapılması da fasulyede kalite parametrelerinin, tat ve aromanın çok daha üst düzeylere ulaşmasına neden olmuştur. Yetiştiricilik yapılan bölgede nem seviyesinin düşük olması, rakımın deniz seviyesinden 1000-1500 m bulunması da pek hastalığın oluşmamasına dolayısıyla bitki koruma ilaçlarının kullanılmamasına neden olmaktadır. Bu da ürünün önemli diğer bir avantajıdır. Verim düzeyi diğer fasulye türlerine göre daha düşüktür. Ancak fasulyede verim kadar tanelerin pişme kalitesi de önem göstermektedir. Kuru fasulyede pişme kalitesini etkileyen faktörlerden en önemlisi tane kabuğudur. Tane kabuğunda phytin miktarı azaldıkça ve Ca, Mg miktarı ve lignin arttıkça pişme süresi uzamaktadır. Tane kabuğunun kalınlığının artması, suyun taneye girişini yavaşlatmakta ve pişme süresini uzatmaktadır. Ancak ispir fasulyesinde phytin miktarı diğer çeşitleremoranla oldukça yüksek iken Ca, Mg içeriği düşük ve lignin oranı az olduğu için erken pişme ve pişerken kabuk oluşumu söz konusu olmamaktadır. İspir fasulyesinin diğer önemli bir üstünlüğüde çok düşük oligosakkarit içeriklerinin bulunmasıdır. Oligosakkarit" denilen bir şeker molekülü içerir. Oligosakkarit tipi büyük moleküllü şekerler midemizde veya ince barsaklarımızda sindirilemezler. Çünkü vücudumuz oligosakkaritleri sindirmemizi sağlayacak bir enzim üretmemektedir. Bu nedenle düşük oligosakkarit içeriği özellikle mide problemi olan insanlarda daha fazala rahatsızlığa neden olmdığı gibi kalp hastalarında, yüksek tansiyona sahip insanlarda gaz oluşmamamsı nedeniyle önemli bir tercih nedenidir.
+
+
+Erzurum’un İspir ilçesinde yetişen ve eşine az rastlanır tadı olan İspir Kuru Fasulyesi, arazinin dağlık olması ve makineli tarımın yaygın olmaması nedeniyle doğal üretim yöntemleri ile  el emeğiyle toplanıyor  ve ayıklanıyor. Suda yeterince şişmesi, erken pişmesi ve pişince kabuk atmaması gibi özellikleri ile öne çıkıyor.
+
+İspir Fasulyesi üretimi, Ekim ayında bir sonraki sezon için tarlanın hazırlanması ile başlıyor. Nisan-Mayıs  aylarında tarlaya tırmık atılıyor, doğal keçi gübresi ile tarla gübreleniyor ve ekim yapılıyor. Fasulyeler yabancı otlardan arındırılıp, sonra sulaması yapılıyor, Eylül ortalarında tarladan söküldükten sonra elle tek tek ayıklanıyor.
+ 
+
+İspir Kuru Fasulyesini akşamdan soğuk suda beklettikten sonra, geleneksel yöntemlerle pişirerek tüketebilirsiniz.
+
+
+
+Ambalaj üzeri:
+
+Erzurum’un İspir ilçesinde yetişen ve el emeği  ile sınırlı sayıda üretilebilen İspir Kuru Fasulyesi, suda yeterince şişmesi, erken pişmesi ve pişince kabuk atmaması gibi özellikleri ile öne çıkıyor.
+
+güzel bir web stiesi yap lğtfen bana 
