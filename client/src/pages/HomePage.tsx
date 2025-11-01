@@ -18,6 +18,10 @@ import { useLocation } from "wouter";
 
 export default function HomePage() {
   const [, setLocation] = useLocation();
+
+  const openWhatsApp = () => {
+    window.open('https://wa.me/905318984145?text=Merhaba,%20MİSPİR%20GIDA%20ürünleri%20hakkında%20toptan%20fiyat%20teklifi%20almak%20istiyorum.', '_blank');
+  };
   
   const features = [
     {
@@ -121,7 +125,7 @@ export default function HomePage() {
                 size="lg" 
                 variant="outline"
                 className="bg-background/20 backdrop-blur-md border-white/30 text-white hover:bg-background/30"
-                onClick={() => setLocation('/iletisim')}
+                onClick={openWhatsApp}
                 data-testid="button-contact"
               >
                 Toptan Teklif Al
@@ -140,7 +144,7 @@ export default function HomePage() {
                 <div className="text-sm text-white/80">Doğal İçerik</div>
               </div>
               <div>
-                <div className="text-3xl font-bold font-serif text-[#C9A227]">Tescil #112</div>
+                <div className="text-3xl font-bold font-serif text-[#C9A227]">2</div>
                 <div className="text-sm text-white/80">Coğrafi İşaret</div>
               </div>
               <div>
@@ -210,8 +214,10 @@ export default function HomePage() {
                 tagline="İnce kabuklu, erken pişen"
                 image={beansImage}
                 origin="Erzurum, İspir"
+                certificationNumber="523"
+                certified={true}
                 href="/urunler#fasulye"
-                onContactClick={() => setLocation('/iletisim')}
+                onContactClick={openWhatsApp}
               />
             </AnimatedSection>
             
@@ -224,7 +230,7 @@ export default function HomePage() {
                 certificationNumber="112"
                 certified={true}
                 href="/urunler#pekmez"
-                onContactClick={() => setLocation('/iletisim')}
+                onContactClick={openWhatsApp}
               />
             </AnimatedSection>
           </div>
@@ -268,7 +274,7 @@ export default function HomePage() {
               <Card className="bg-primary-foreground/10 backdrop-blur-md border-primary-foreground/20 hover-elevate">
                 <CardContent className="p-8 text-center">
                   <Award className="h-12 w-12 text-[#C9A227] mx-auto mb-4" />
-                  <div className="text-5xl font-bold font-serif mb-2">1</div>
+                  <div className="text-5xl font-bold font-serif mb-2">2</div>
                   <div className="text-lg">Coğrafi İşaret</div>
                 </CardContent>
               </Card>

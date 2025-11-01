@@ -22,6 +22,11 @@ import { useLocation } from "wouter";
 
 export default function ProductsPage() {
   const [, setLocation] = useLocation();
+
+  const openWhatsApp = (product: string) => {
+    const message = `Merhaba, ${product} için toptan fiyat teklifi almak istiyorum.`;
+    window.open(`https://wa.me/905318984145?text=${encodeURIComponent(message)}`, '_blank');
+  };
   const beansTimeline = [
     { number: 1, title: "Tarla Hazırlığı", description: "Ekim ayında bir sonraki sezon için tarla hazırlanır" },
     { number: 2, title: "Gübreleme ve Ekim", description: "Nisan-Mayıs aylarında doğal keçi gübresi ile gübrelenir ve ekim yapılır" },
@@ -77,7 +82,7 @@ export default function ProductsPage() {
                 </p>
                 <Button 
                   size="lg"
-                  onClick={() => setLocation('/iletisim')}
+                  onClick={() => openWhatsApp('İspir Kuru Fasulyesi')}
                   data-testid="button-contact-beans"
                 >
                   Toptan Teklif Al
@@ -236,7 +241,7 @@ export default function ProductsPage() {
                 <div className="flex gap-4">
                   <Button 
                     size="lg"
-                    onClick={() => setLocation('/iletisim')}
+                    onClick={() => openWhatsApp('Karnavas Dut Pekmezi')}
                     data-testid="button-contact-molasses"
                   >
                     Toptan Teklif Al
