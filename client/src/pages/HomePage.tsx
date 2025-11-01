@@ -7,6 +7,7 @@ import FeatureGrid from "@/components/FeatureGrid";
 import GIBadge from "@/components/GIBadge";
 import AnimatedSection from "@/components/AnimatedSection";
 import Testimonial from "@/components/Testimonial";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -58,6 +59,11 @@ export default function HomePage() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Ana Sayfa"
+        description="MİSPİR GIDA - Coğrafi işaretli İspir Kuru Fasulyesi ve Karnavas Dut Pekmezi üreticisi. Erzurum İspir'den %100 doğal, geleneksel yöntemlerle üretilmiş premium gıda ürünleri."
+        keywords="İspir kuru fasulyesi, Karnavas dut pekmezi, coğrafi işaret, doğal gıda, Erzurum, İspir, geleneksel üretim, organik fasulye, doğal pekmez"
+      />
       <Navigation />
       
       {/* Premium Product Hero */}

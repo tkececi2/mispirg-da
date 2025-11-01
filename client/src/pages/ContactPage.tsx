@@ -1,12 +1,18 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ContactForm from "@/components/ContactForm";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 
 export default function ContactPage() {
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="İletişim"
+        description="MİSPİR GIDA ile iletişime geçin. İspir, Erzurum adresimizden veya telefon, e-posta ve WhatsApp üzerinden bize ulaşabilirsiniz. Toptan fiyat teklifleri için hemen iletişime geçin."
+        keywords="MİSPİR GIDA iletişim, Erzurum İspir adres, toptan fasulye sipariş, dut pekmezi sipariş, iletişim bilgileri"
+      />
       <Navigation />
       
       <div className="pt-24 pb-16 md:pb-24 px-4">
@@ -55,8 +61,8 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">Telefon</h3>
-                      <a href="tel:+905551234567" className="text-muted-foreground hover:text-primary" data-testid="link-phone">
-                        +90 555 123 4567
+                      <a href="tel:+905318984145" className="text-muted-foreground hover:text-primary" data-testid="link-phone">
+                        +90 531 898 4145
                       </a>
                     </div>
                   </CardContent>
@@ -70,7 +76,7 @@ export default function ContactPage() {
                     <div>
                       <h3 className="font-semibold text-foreground mb-1">WhatsApp</h3>
                       <a 
-                        href="https://wa.me/905551234567" 
+                        href="https://wa.me/905318984145" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="text-muted-foreground hover:text-primary"
@@ -99,14 +105,14 @@ export default function ContactPage() {
 
               <div className="rounded-lg overflow-hidden h-64 bg-muted">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d98196.94469286847!2d40.989347!3d40.484166!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406bb0e2e4e4e4e5%3A0x4c4c4c4c4c4c4c4c!2sErzurum%2C%20Turkey!5e0!3m2!1sen!2str!4v1234567890"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d838.9109555224559!2d40.999632711290104!3d40.48614735707552!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x406f442fcf7ee82d%3A0xa33cf0ce9ff9e138!2zxLBzcGlyLCBFcnp1cnVtLCBUw7xya2l5ZQ!5e1!3m2!1str!2svi!4v1762002821166!5m2!1str!2svi"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  title="MİSPİR GIDA Konum"
+                  title="MİSPİR GIDA Konum - İspir, Erzurum"
                   data-testid="map-location"
                 />
               </div>

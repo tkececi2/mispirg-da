@@ -1,6 +1,7 @@
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import AnimatedSection from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Leaf, Heart, Award, Users, Target, CheckCircle, TreePine, Handshake } from "lucide-react";
@@ -35,6 +36,11 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Kurumsal"
+        description="MİSPİR GIDA - Erzurum İspir'den coğrafi işaret tescilli doğal ürünler. Asırlık geleneksel üretim yöntemleri, yerel üretici desteği ve sürdürülebilir tarım anlayışı ile kaliteli gıda üretimi."
+        keywords="MİSPİR GIDA hakkında, Erzurum yerel üretici, geleneksel gıda üretimi, coğrafi işaret şirketi, sürdürülebilir tarım"
+      />
       <Navigation />
       
       {/* Premium Hero */}

@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Timeline from "@/components/Timeline";
 import GIBadge from "@/components/GIBadge";
 import AnimatedSection from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -58,6 +59,11 @@ export default function ProductsPage() {
 
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Ürünler"
+        description="Coğrafi işaret tescilli İspir Kuru Fasulyesi (#523) ve Karnavas Dut Pekmezi (#112). Geleneksel yöntemlerle üretilen, %100 doğal premium gıda ürünleri. Toptan satış için iletişime geçin."
+        keywords="İspir kuru fasulyesi tescil 523, Karnavas dut pekmezi tescil 112, coğrafi işaret fasulye, geleneksel pekmez, toptan fasulye, doğal pekmez"
+      />
       <Navigation />
       
       {/* Hero Section */}

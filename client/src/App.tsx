@@ -3,10 +3,12 @@ import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import ScrollToTop from "@/components/ScrollToTop";
 import HomePage from "@/pages/HomePage";
 import ProductsPage from "@/pages/ProductsPage";
 import AboutPage from "@/pages/AboutPage";
 import GIPage from "@/pages/GIPage";
+import GalleryPage from "@/pages/GalleryPage";
 import ContactPage from "@/pages/ContactPage";
 import KVKKPage from "@/pages/KVKKPage";
 import NotFound from "@/pages/not-found";
@@ -18,6 +20,7 @@ function Router() {
       <Route path="/urunler" component={ProductsPage} />
       <Route path="/kurumsal" component={AboutPage} />
       <Route path="/cografi-isaret" component={GIPage} />
+      <Route path="/galeri" component={GalleryPage} />
       <Route path="/iletisim" component={ContactPage} />
       <Route path="/kvkk" component={KVKKPage} />
       <Route component={NotFound} />
@@ -30,6 +33,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
+        <ScrollToTop />
         <Router />
       </TooltipProvider>
     </QueryClientProvider>

@@ -2,6 +2,7 @@ import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import GIBadge from "@/components/GIBadge";
 import AnimatedSection from "@/components/AnimatedSection";
+import SEOHead from "@/components/SEOHead";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { MapPin, Shield, Award, CheckCircle } from "lucide-react";
@@ -13,6 +14,11 @@ import molassesImage from '@assets/generated_images/Mulberry_molasses_product_ph
 export default function GIPage() {
   return (
     <div className="min-h-screen">
+      <SEOHead 
+        title="Coğrafi İşaret"
+        description="T.C. Türk Patent Enstitüsü tescilli coğrafi işaret ürünlerimiz: İspir Kuru Fasulyesi (Tescil #523) ve Karnavas Dut Pekmezi (Tescil #112). Kalite ve özgünlük garantisi."
+        keywords="coğrafi işaret nedir, TPE tescil, İspir fasulye tescil 523, Karnavas pekmez tescil 112, coğrafi işaret koruma, orijin ürün"
+      />
       <Navigation />
       
       {/* Premium Hero */}

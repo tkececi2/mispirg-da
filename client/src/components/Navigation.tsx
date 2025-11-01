@@ -29,6 +29,7 @@ export default function Navigation() {
     { href: "/kurumsal", label: "Kurumsal" },
     { href: "/urunler", label: "Ürünler" },
     { href: "/cografi-isaret", label: "Coğrafi İşaret" },
+    { href: "/galeri", label: "Galeri" },
     { href: "/iletisim", label: "İletişim" },
   ];
 
