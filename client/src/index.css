@@ -76,8 +76,8 @@
   --chart-4: 45 75% 38%;
   --chart-5: 150 55% 25%;
 
-  --font-sans: Inter, sans-serif;
-  --font-serif: Fraunces, Georgia, serif;
+  --font-sans: "Inter", sans-serif;
+  --font-serif: "Fraunces", Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius: .5rem; /* 8px */
   --shadow-2xs: 0px 2px 0px 0px hsl(150 10% 15% / 0.00);
