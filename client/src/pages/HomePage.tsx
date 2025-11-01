@@ -1,13 +1,16 @@
 import { useState } from "react";
+import { motion } from "framer-motion";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
 import ProductCard from "@/components/ProductCard";
 import FeatureGrid from "@/components/FeatureGrid";
 import GIBadge from "@/components/GIBadge";
+import AnimatedSection from "@/components/AnimatedSection";
+import Testimonial from "@/components/Testimonial";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { Leaf, Award, Heart, Sprout, Mountain, Users, ArrowRight } from "lucide-react";
+import { Leaf, Award, Heart, Sprout, Mountain, Users, ArrowRight, Star, TrendingUp, Package } from "lucide-react";
 import heroImage from '@assets/generated_images/İspir_landscape_hero_image_f4ebad56.png';
 import beansImage from '@assets/generated_images/İspir_beans_product_photo_2cbc159a.png';
 import molassesImage from '@assets/generated_images/Mulberry_molasses_product_photo_6290a604.png';
@@ -63,18 +66,48 @@ export default function HomePage() {
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           {/* Left: Brand Story */}
-          <div className="text-white">
-            <Badge className="bg-[#C9A227] text-white mb-6 px-4 py-2 text-sm font-semibold">
-              Erzurum, İspir
-            </Badge>
-            <h1 className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-6" data-testid="text-hero-title">
-              Doğanın Saf Lezzeti
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed" data-testid="text-hero-subtitle">
-              Yüzyıllık gelenekle üretilen, coğrafi işaret tescilli doğal gıdalar
-            </p>
+          <motion.div 
+            className="text-white"
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <Badge className="bg-[#C9A227] text-white mb-6 px-4 py-2 text-sm font-semibold">
+                Erzurum, İspir
+              </Badge>
+            </motion.div>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-8">
+            <motion.h1 
+              className="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-6" 
+              data-testid="text-hero-title"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
+              Doğanın Saf Lezzeti
+            </motion.h1>
+            
+            <motion.p 
+              className="text-xl md:text-2xl text-white/90 mb-8 leading-relaxed" 
+              data-testid="text-hero-subtitle"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+            >
+              Yüzyıllık gelenekle üretilen, coğrafi işaret tescilli doğal gıdalar
+            </motion.p>
+            
+            <motion.div 
+              className="flex flex-col sm:flex-row gap-4 mb-8"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               <Button 
                 size="lg" 
                 className="bg-primary text-primary-foreground"
@@ -93,10 +126,15 @@ export default function HomePage() {
               >
                 Toptan Teklif Al
               </Button>
-            </div>
+            </motion.div>
 
             {/* Trust Markers */}
-            <div className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20">
+            <motion.div 
+              className="grid grid-cols-3 gap-6 pt-8 border-t border-white/20"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7 }}
+            >
               <div>
                 <div className="text-3xl font-bold font-serif text-[#C9A227]">100%</div>
                 <div className="text-sm text-white/80">Doğal İçerik</div>
@@ -109,16 +147,26 @@ export default function HomePage() {
                 <div className="text-3xl font-bold font-serif text-[#C9A227]">2 Ürün</div>
                 <div className="text-sm text-white/80">Premium Koleksiyon</div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
 
           {/* Right: GI Badge Showcase */}
-          <div className="flex justify-center lg:justify-end">
+          <motion.div 
+            className="flex justify-center lg:justify-end"
+            initial={{ opacity: 0, x: 30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+          >
             <Card className="bg-background/95 backdrop-blur-md p-8 max-w-md">
               <CardContent className="p-0">
-                <div className="flex justify-center mb-6">
+                <motion.div 
+                  className="flex justify-center mb-6"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.6, delay: 0.6 }}
+                >
                   <GIBadge size="lg" />
-                </div>
+                </motion.div>
                 <h3 className="font-serif text-2xl font-bold text-center mb-4">
                   Coğrafi İşaret Tescilli
                 </h3>
@@ -136,14 +184,14 @@ export default function HomePage() {
                 </Button>
               </CardContent>
             </Card>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Signature Product Collection */}
       <section className="py-20 md:py-32 bg-[#EFE9E1]/30 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <Badge className="bg-primary text-primary-foreground mb-4 px-4 py-2">
               Premium Koleksiyon
             </Badge>
@@ -153,28 +201,88 @@ export default function HomePage() {
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto" data-testid="text-products-subtitle">
               Coğrafi işaret tescilli ve geleneksel yöntemlerle üretilen eşsiz lezzetler
             </p>
-          </div>
+          </AnimatedSection>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            <ProductCard
-              name="İspir Kuru Fasulyesi"
-              tagline="İnce kabuklu, erken pişen"
-              image={beansImage}
-              origin="Erzurum, İspir"
-              href="/urunler#fasulye"
-              onContactClick={() => setLocation('/iletisim')}
-            />
+            <AnimatedSection delay={0.1}>
+              <ProductCard
+                name="İspir Kuru Fasulyesi"
+                tagline="İnce kabuklu, erken pişen"
+                image={beansImage}
+                origin="Erzurum, İspir"
+                href="/urunler#fasulye"
+                onContactClick={() => setLocation('/iletisim')}
+              />
+            </AnimatedSection>
             
-            <ProductCard
-              name="Karnavas Dut Pekmezi"
-              tagline="Baldan tatlı eşsiz tat"
-              image={molassesImage}
-              origin="Erzurum, Olur - Karnavas"
-              certificationNumber="112"
-              certified={true}
-              href="/urunler#pekmez"
-              onContactClick={() => setLocation('/iletisim')}
-            />
+            <AnimatedSection delay={0.2}>
+              <ProductCard
+                name="Karnavas Dut Pekmezi"
+                tagline="Baldan tatlı eşsiz tat"
+                image={molassesImage}
+                origin="Erzurum, Olur - Karnavas"
+                certificationNumber="112"
+                certified={true}
+                href="/urunler#pekmez"
+                onContactClick={() => setLocation('/iletisim')}
+              />
+            </AnimatedSection>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust & Statistics */}
+      <section className="py-20 md:py-32 bg-primary text-primary-foreground px-4">
+        <div className="max-w-7xl mx-auto">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold mb-6">
+              Rakamlarla MİSPİR GIDA
+            </h2>
+            <p className="text-xl text-primary-foreground/80 max-w-2xl mx-auto">
+              Doğal üretim ve kaliteli hizmet anlayışımızla
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <AnimatedSection delay={0.1}>
+              <Card className="bg-primary-foreground/10 backdrop-blur-md border-primary-foreground/20 hover-elevate">
+                <CardContent className="p-8 text-center">
+                  <Star className="h-12 w-12 text-[#C9A227] mx-auto mb-4" />
+                  <div className="text-5xl font-bold font-serif mb-2">15+</div>
+                  <div className="text-lg">Yıllık Tecrübe</div>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.2}>
+              <Card className="bg-primary-foreground/10 backdrop-blur-md border-primary-foreground/20 hover-elevate">
+                <CardContent className="p-8 text-center">
+                  <Package className="h-12 w-12 text-[#C9A227] mx-auto mb-4" />
+                  <div className="text-5xl font-bold font-serif mb-2">2</div>
+                  <div className="text-lg">Premium Ürün</div>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.3}>
+              <Card className="bg-primary-foreground/10 backdrop-blur-md border-primary-foreground/20 hover-elevate">
+                <CardContent className="p-8 text-center">
+                  <Award className="h-12 w-12 text-[#C9A227] mx-auto mb-4" />
+                  <div className="text-5xl font-bold font-serif mb-2">1</div>
+                  <div className="text-lg">Coğrafi İşaret</div>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.4}>
+              <Card className="bg-primary-foreground/10 backdrop-blur-md border-primary-foreground/20 hover-elevate">
+                <CardContent className="p-8 text-center">
+                  <TrendingUp className="h-12 w-12 text-[#C9A227] mx-auto mb-4" />
+                  <div className="text-5xl font-bold font-serif mb-2">100%</div>
+                  <div className="text-lg">Müşteri Memnuniyeti</div>
+                </CardContent>
+              </Card>
+            </AnimatedSection>
           </div>
         </div>
       </section>
@@ -182,7 +290,7 @@ export default function HomePage() {
       {/* Brand Values */}
       <section className="py-20 md:py-32 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
+          <AnimatedSection className="text-center mb-16">
             <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6" data-testid="text-values-title">
               Neden MİSPİR GIDA?
             </h2>
@@ -190,9 +298,54 @@ export default function HomePage() {
               Erzurum'un İspir ilçesinden, doğanın sunduğu en saf lezzetleri sofralarınıza getiriyoruz. 
               Geleneksel üretim yöntemlerimiz ve coğrafi işaret tescilli ürünlerimizle kalite ve güven sunuyoruz.
             </p>
-          </div>
+          </AnimatedSection>
 
-          <FeatureGrid features={features} />
+          <AnimatedSection delay={0.1}>
+            <FeatureGrid features={features} />
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-20 md:py-32 bg-[#EFE9E1]/30 px-4">
+        <div className="max-w-7xl mx-auto">
+          <AnimatedSection className="text-center mb-16">
+            <h2 className="font-serif text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Müşterilerimiz Ne Diyor?
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+              Binlerce memnun müşterimizden bazılarının görüşleri
+            </p>
+          </AnimatedSection>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <AnimatedSection delay={0.1}>
+              <Testimonial
+                name="Mehmet Kaya"
+                title="Restoran Sahibi, İstanbul"
+                content="MİSPİR GIDA'nın İspir fasulyesi gerçekten eşsiz. Müşterilerimiz bu lezzeti çok beğeniyor. Kalitesi tartışılmaz."
+                rating={5}
+              />
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.2}>
+              <Testimonial
+                name="Ayşe Demir"
+                title="Gıda Mühendisi, Ankara"
+                content="Dut pekmezinin coğrafi işaret tescilli olması ve %100 doğal içeriği bizi çok etkiledi. Gerçekten premium bir ürün."
+                rating={5}
+              />
+            </AnimatedSection>
+
+            <AnimatedSection delay={0.3}>
+              <Testimonial
+                name="Hasan Yıldız"
+                title="Market Zinciri Yöneticisi, İzmir"
+                content="Toptan alımlarımızda MİSPİR GIDA'yı tercih ediyoruz. Ürün kalitesi ve müşteri memnuniyeti hep üst seviyede."
+                rating={5}
+              />
+            </AnimatedSection>
+          </div>
         </div>
       </section>
 
